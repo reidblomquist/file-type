@@ -683,10 +683,24 @@ module.exports = input => {
 		};
 	}
 
-	if (check([0x46, 0x49, 0x54])) {
+	if (check([0x46, 0x49, 0x54], {offset: 9})) {
 		return {
 			ext: 'fit',
 			mime: 'application/octet-stream'
+		};
+	}
+
+	if (check([0x67, 0x70, 0x78], {offset: 58})) {
+		return {
+			ext: 'gpx',
+			mime: 'text/xml'
+		};
+	}
+
+	if (check([0x54, 0x72, 0x61, 0x69, 0x6E, 0x69, 0x6E, 0x67], {offset: 57})) {
+		return {
+			ext: 'tcx',
+			mime: 'text/xml'
 		};
 	}
 
