@@ -683,5 +683,12 @@ module.exports = input => {
 		};
 	}
 
+	if (check([0x46, 0x49, 0x54])) {
+		return {
+			ext: 'fit',
+			mime: 'application/octet-stream'
+		};
+	}
+
 	return null;
 };
